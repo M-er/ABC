@@ -26,9 +26,9 @@ void algoritmo_ABC (Cfg parametros);
 int main (int argc, char **argv){
 	Cfg param;
 	param=leeArchivo(argv[1]);
-	param.funcion_o=atoi(argv[2]);
-	param.funcion_dim=atoi(argv[3]);
-	param.tipo_vecindario=atoi(argv[4]);
+	//param.funcion_o=atoi(argv[2]);
+	//param.funcion_dim=atoi(argv[3]);
+	//param.tipo_vecindario=atoi(argv[4]);
 	algoritmo_ABC(param);
 	return 1;
 }

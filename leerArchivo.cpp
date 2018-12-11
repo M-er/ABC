@@ -34,9 +34,15 @@ Cfg leeArchivo(string nombre)
 			resultado.recombina = a;
 			resultado.rec_par = b/100.0;
 			break;
-			/*case 5: sscanf(linea,"%d                ", &a);
+			case 5: sscanf(linea,"%d                ", &a);
 			resultado.tipo_vecindario = a;
-			break;*/
+			break;
+			case 6: sscanf(linea,"%d                ", &a);
+			resultado.funcion_dim = a;
+			break;
+			case 7: sscanf(linea,"%d                ", &a);
+			resultado.funcion_o = a;
+			break;
 		}
 		parametro++;
 	}

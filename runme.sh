@@ -1,4 +1,4 @@
 make m
-nohup ./ejecuta1 &
+nohup ./loopInstancias &
 sleep 1
 echo -e "\n"
