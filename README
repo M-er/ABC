@@ -1,0 +1,21 @@
+Package: CEC2008-f7 C++ bindings to java
+Version: 1.0RC1,
+Author: Aleš Zamuda <ales.zamuda@uni-mb.si>
+using FractalFunctions-1.0RC1.src.zip Version 1.0 beta Release Candidate 1, 7th November 2007
+Date: nov 10 11:37 CET 2007
+
+This source code is provided for free use under GPL license from Aleš Zamuda <ales.zamuda@uni-mb.si>.
+
+To compile successfouly, following files were taken from FractalFunctions-1.0RC1.src.zip,
+downloaded from http://www.cs.bham.ac.uk/research/projects/ecb/data/150/FractalFunctions-1.0RC1.src.zip,
+with permission of Dr. Cara MacNish:
+DoubleDip.java
+FastFractal.java
+FractalFunction1D.java
+RanQD1.java
+RanTable.java
+UnitFunction1D.java
+
+Sample demo use case in "m.cpp" is also provided, with a simple main function.
+The solution was tested on a 64-bit linux machine.
+

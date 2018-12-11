@@ -1,0 +1,418 @@
+/*
+                             Columna
+                         x x x x x x x x x x
+                         x x x x x x x x x x
+                         x x x x x x x x x x
+                         x x x x x x x x x x    TopFil = 10
+                    Fila x x x x x x x x x x    Top Col= 10
+                         x x x x x x x x x x
+                         x x x x x x x x x x
+                         x x x x x x x x x x
+                         x x x x x x x x x x
+                         x x x x x x x x x x
+ */
+void conformar_vecindario(int maxF, int maxC, int f, int c, int metodo){
+        switch(metodo) {
+        //Abajo, Izquierda, Arriba, Derecha, Centro
+        case 1: {
+        default:
+                if(f == 0) {
+                        if(c == 0) {
+                                vec_vecindario[0][0] = f+1;
+                                vec_vecindario[0][1] = c;
+                                vec_vecindario[1][0] = f;
+                                vec_vecindario[1][1] = maxC-1;
+                                vec_vecindario[2][0] = maxF-1;
+                                vec_vecindario[2][1] = c;
+                                vec_vecindario[3][0] = f;
+                                vec_vecindario[3][1] = c+1;
+                                vec_vecindario[4][0] = f;
+                                vec_vecindario[4][1] = c;
+                        }else{
+                                if(c == maxC - 1) {
+                                        vec_vecindario[0][0] = f+1;
+                                        vec_vecindario[0][1] = c;
+                                        vec_vecindario[1][0] = f;
+                                        vec_vecindario[1][1] = c-1;
+                                        vec_vecindario[2][0] = maxF-1;
+                                        vec_vecindario[2][1] = c;
+                                        vec_vecindario[3][0] = 0;
+                                        vec_vecindario[3][1] = 0;
+                                        vec_vecindario[4][0] = f;
+                                        vec_vecindario[4][1] = c;
+                                }else{
+                                        vec_vecindario[0][0] = f+1;
+                                        vec_vecindario[0][1] = c;
+                                        vec_vecindario[1][0] = f;
+                                        vec_vecindario[1][1] = c-1;
+                                        vec_vecindario[2][0] = maxF-1;
+                                        vec_vecindario[2][1] = c;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = c+1;
+                                        vec_vecindario[4][0] = f;
+                                        vec_vecindario[4][1] = c;
+                                }
+                        }
+                }else{
+                        if(f == maxF - 1) {
+                                if(c == 0) {
+                                        vec_vecindario[0][0] = 0;
+                                        vec_vecindario[0][1] = c;
+                                        vec_vecindario[1][0] = f;
+                                        vec_vecindario[1][1] = maxC-1;
+                                        vec_vecindario[2][0] = f-1;
+                                        vec_vecindario[2][1] = c;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = 1;
+                                        vec_vecindario[4][0] = f;
+                                        vec_vecindario[4][1] = c;
+                                }else{
+                                        if(c == maxC - 1) {
+                                                vec_vecindario[0][0] = 0;
+                                                vec_vecindario[0][1] = c;
+                                                vec_vecindario[1][0] = f;
+                                                vec_vecindario[1][1] = c-1;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = c;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = 0;
+                                                vec_vecindario[4][0] = f;
+                                                vec_vecindario[4][1] = c;
+                                        }else{
+                                                vec_vecindario[0][0] = 0;
+                                                vec_vecindario[0][1] = c;
+                                                vec_vecindario[1][0] = f;
+                                                vec_vecindario[1][1] = c-1;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = c;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = c+1;
+                                                vec_vecindario[4][0] = f;
+                                                vec_vecindario[4][1] = c;
+                                        }
+                                }
+                        }else{
+                                if(c == 0) {
+                                        vec_vecindario[0][0] = f+1;
+                                        vec_vecindario[0][1] = c;
+                                        vec_vecindario[1][0] = f;
+                                        vec_vecindario[1][1] = maxC-1;
+                                        vec_vecindario[2][0] = f-1;
+                                        vec_vecindario[2][1] = c;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = c+1;
+                                        vec_vecindario[4][0] = f;
+                                        vec_vecindario[4][1] = c;
+                                }else{
+                                        if(c == maxC - 1) {
+                                                vec_vecindario[0][0] = f+1;
+                                                vec_vecindario[0][1] = c;
+                                                vec_vecindario[1][0] = f;
+                                                vec_vecindario[1][1] = c-1;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = c;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = 0;
+                                                vec_vecindario[4][0] = f;
+                                                vec_vecindario[4][1] = c;
+                                        }else{
+                                                vec_vecindario[0][0] = f+1;
+                                                vec_vecindario[0][1] = c;
+                                                vec_vecindario[1][0] = f;
+                                                vec_vecindario[1][1] = c-1;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = c;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = c+1;
+                                                vec_vecindario[4][0] = f;
+                                                vec_vecindario[4][1] = c;
+                                        }
+                                }
+                        }
+                }
+        }
+        break;
+        //Izquierda, Arriba, Derecha, Abajo, Centro
+        case 2: {
+                if(f == 0) {
+                        if(c == 0) {
+                                vec_vecindario[0][0] = maxF-1;
+                                vec_vecindario[0][1] = maxC-1;
+                                vec_vecindario[1][0] = maxF-1;
+                                vec_vecindario[1][1] = c;
+                                vec_vecindario[2][0] = maxF-1;
+                                vec_vecindario[2][1] = c+1;
+                                vec_vecindario[3][0] = f;
+                                vec_vecindario[3][1] = c+1;
+                                vec_vecindario[4][0] = f+1;
+                                vec_vecindario[4][1] = c+1;
+                                vec_vecindario[5][0] = f+1;
+                                vec_vecindario[5][1] = c;
+                                vec_vecindario[6][0] = f+1;
+                                vec_vecindario[6][1] = maxC-1;
+                                vec_vecindario[7][0] = f;
+                                vec_vecindario[7][1] = maxC-1;
+                                vec_vecindario[8][0] = f;
+                                vec_vecindario[8][1] = c;
+                        }else{
+                                if(c == maxC - 1) {
+                                        vec_vecindario[0][0] = maxF-1;
+                                        vec_vecindario[0][1] = c-1;
+                                        vec_vecindario[1][0] = maxF-1;
+                                        vec_vecindario[1][1] = c;
+                                        vec_vecindario[2][0] = maxF-1;
+                                        vec_vecindario[2][1] = 0;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = 1;
+                                        vec_vecindario[4][0] = f+1;
+                                        vec_vecindario[4][1] = 0;
+                                        vec_vecindario[5][0] = f+1;
+                                        vec_vecindario[5][1] = c;
+                                        vec_vecindario[6][0] = f+1;
+                                        vec_vecindario[6][1] = c-1;
+                                        vec_vecindario[7][0] = f;
+                                        vec_vecindario[7][1] = c-1;
+                                        vec_vecindario[8][0] = f;
+                                        vec_vecindario[8][1] = c;
+                                }else{
+                                        vec_vecindario[0][0] = maxF-1;
+                                        vec_vecindario[0][1] = c-1;
+                                        vec_vecindario[1][0] = maxF-1;
+                                        vec_vecindario[1][1] = c;
+                                        vec_vecindario[2][0] = maxF-1;
+                                        vec_vecindario[2][1] = c+1;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = c+1;
+                                        vec_vecindario[4][0] = f+1;
+                                        vec_vecindario[4][1] = c+1;
+                                        vec_vecindario[5][0] = f+1;
+                                        vec_vecindario[5][1] = c;
+                                        vec_vecindario[6][0] = f+1;
+                                        vec_vecindario[6][1] = c-1;
+                                        vec_vecindario[7][0] = f;
+                                        vec_vecindario[7][1] = c-1;
+                                        vec_vecindario[8][0] = f;
+                                        vec_vecindario[8][1] = c;
+                                }
+                        }
+                }else{
+                        if(f == maxF - 1) {
+                                if(c == 0) {
+                                        vec_vecindario[0][0] = f-1;
+                                        vec_vecindario[0][1] = maxC-1;
+                                        vec_vecindario[1][0] = f-1;
+                                        vec_vecindario[1][1] = c;
+                                        vec_vecindario[2][0] = f-1;
+                                        vec_vecindario[2][1] = c+1;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = c+1;
+                                        vec_vecindario[4][0] = 0;
+                                        vec_vecindario[4][1] = c+1;
+                                        vec_vecindario[5][0] = 0;
+                                        vec_vecindario[5][1] = c;
+                                        vec_vecindario[6][0] = 0;
+                                        vec_vecindario[6][1] = maxC-1;
+                                        vec_vecindario[7][0] = f;
+                                        vec_vecindario[7][1] = maxC-1;
+                                        vec_vecindario[8][0] = f;
+                                        vec_vecindario[8][1] = c;
+                                }else{
+                                        if(c == maxC - 1) {
+                                                vec_vecindario[0][0] = f-1;
+                                                vec_vecindario[0][1] = c-1;
+                                                vec_vecindario[1][0] = f-1;
+                                                vec_vecindario[1][1] = c;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = 0;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = 0;
+                                                vec_vecindario[4][0] = 0;
+                                                vec_vecindario[4][1] = 0;
+                                                vec_vecindario[5][0] = 0;
+                                                vec_vecindario[5][1] = c;
+                                                vec_vecindario[6][0] = 0;
+                                                vec_vecindario[6][1] = c-1;
+                                                vec_vecindario[7][0] = f;
+                                                vec_vecindario[7][1] = c-1;
+                                                vec_vecindario[8][0] = f;
+                                                vec_vecindario[8][1] = c;
+                                        }else{
+                                                vec_vecindario[0][0] = f-1;
+                                                vec_vecindario[0][1] = c-1;
+                                                vec_vecindario[1][0] = f-1;
+                                                vec_vecindario[1][1] = c;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = c+1;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = c+1;
+                                                vec_vecindario[4][0] = 0;
+                                                vec_vecindario[4][1] = c+1;
+                                                vec_vecindario[5][0] = 0;
+                                                vec_vecindario[5][1] = c;
+                                                vec_vecindario[6][0] = 0;
+                                                vec_vecindario[6][1] = c-1;
+                                                vec_vecindario[7][0] = f;
+                                                vec_vecindario[7][1] = c-1;
+                                                vec_vecindario[8][0] = f;
+                                                vec_vecindario[8][1] = c;
+                                        }
+                                }
+                        }else{
+                                if(c == 0) {
+                                        vec_vecindario[0][0] = f-1;
+                                        vec_vecindario[0][1] = maxC-1;
+                                        vec_vecindario[1][0] = f-1;
+                                        vec_vecindario[1][1] = c;
+                                        vec_vecindario[2][0] = f-1;
+                                        vec_vecindario[2][1] = c+1;
+                                        vec_vecindario[3][0] = f;
+                                        vec_vecindario[3][1] = c+1;
+                                        vec_vecindario[4][0] = f+1;
+                                        vec_vecindario[4][1] = c+1;
+                                        vec_vecindario[5][0] = f+1;
+                                        vec_vecindario[5][1] = c;
+                                        vec_vecindario[6][0] = f+1;
+                                        vec_vecindario[6][1] = maxC-1;
+                                        vec_vecindario[7][0] = f;
+                                        vec_vecindario[7][1] = maxC-1;
+                                        vec_vecindario[8][0] = f;
+                                        vec_vecindario[8][1] = c;
+                                }else{
+                                        if(c == maxC - 1) {
+                                                vec_vecindario[0][0] = f-1;
+                                                vec_vecindario[0][1] = c-1;
+                                                vec_vecindario[1][0] = f-1;
+                                                vec_vecindario[1][1] = c;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = 0;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = 0;
+                                                vec_vecindario[4][0] = f+1;
+                                                vec_vecindario[4][1] = 0;
+                                                vec_vecindario[5][0] = f+1;
+                                                vec_vecindario[5][1] = c;
+                                                vec_vecindario[6][0] = f+1;
+                                                vec_vecindario[6][1] = c-1;
+                                                vec_vecindario[7][0] = f;
+                                                vec_vecindario[7][1] = c-1;
+                                                vec_vecindario[8][0] = f;
+                                                vec_vecindario[8][1] = c;
+                                        }else{
+                                                vec_vecindario[0][0] = f-1;
+                                                vec_vecindario[0][1] = c-1;
+                                                vec_vecindario[1][0] = f-1;
+                                                vec_vecindario[1][1] = c;
+                                                vec_vecindario[2][0] = f-1;
+                                                vec_vecindario[2][1] = c+1;
+                                                vec_vecindario[3][0] = f;
+                                                vec_vecindario[3][1] = c+1;
+                                                vec_vecindario[4][0] = f+1;
+                                                vec_vecindario[4][1] = c+1;
+                                                vec_vecindario[5][0] = f+1;
+                                                vec_vecindario[5][1] = c;
+                                                vec_vecindario[6][0] = f+1;
+                                                vec_vecindario[6][1] = c-1;
+                                                vec_vecindario[7][0] = f;
+                                                vec_vecindario[7][1] = c-1;
+                                                vec_vecindario[8][0] = f;
+                                                vec_vecindario[8][1] = c;
+                                        }
+                                }
+                        }
+                }
+        }
+        break;
+        //Izquierda, Arriba, Derecha, Abajo, Centro
+        case 3: {
+                // C9
+                /*
+                   0 0 0 0 0 0 0
+                   0 0 0 x 0 0 0
+                   0 0 0 x 0 0 0
+                   0 x x X x x
+                   0 0 0 x 0 0 0
+                   0 0 0 x 0 0 0
+                   0 0 0 0 0 0 0
+                 */
+                //Izquierda
+                if(c-2 < 0) {
+                        if(c-1 < 0) {
+                                vec_vecindario[0][0] = f;
+                                vec_vecindario[0][1] = maxC-1;
+                                vec_vecindario[1][0] = f;
+                                vec_vecindario[1][1] = maxC-2;
+                        }else{
+                                vec_vecindario[0][0] = f;
+                                vec_vecindario[0][1] = c-1;
+                                vec_vecindario[1][0] = f;
+                                vec_vecindario[1][1] = maxC-1;
+                        }
+                }else{
+                        vec_vecindario[0][0] = f;
+                        vec_vecindario[0][1] = c-1;
+                        vec_vecindario[1][0] = f;
+                        vec_vecindario[1][1] = c-2;
+                }
+                //Arriba
+                if(f-2 < 0) {
+                        if(f-1 < 0) {
+                                vec_vecindario[2][0] =  maxF-1;
+                                vec_vecindario[2][1] =  c;
+                                vec_vecindario[3][0] =  maxF-2;
+                                vec_vecindario[3][1] =  c;
+                        }else{
+                                vec_vecindario[2][0] =  f-1;
+                                vec_vecindario[2][1] =  c;
+                                vec_vecindario[3][0] =  maxF-1;
+                                vec_vecindario[3][1] =  c;
+                        }
+                }else{
+                        vec_vecindario[2][0] =  f-1;
+                        vec_vecindario[2][1] =  c;
+                        vec_vecindario[3][0] =  f-2;
+                        vec_vecindario[3][1] =  c;
+                }
+                //Abajo
+                if(f+2 > maxF) {
+                        if(f+1 > maxF) {
+                                vec_vecindario[4][0] =  0;
+                                vec_vecindario[4][1] =  c;
+                                vec_vecindario[5][0] =  1;
+                                vec_vecindario[5][1] =  c;
+                        }else{
+                                vec_vecindario[4][0] =  f+1;
+                                vec_vecindario[4][1] =  c;
+                                vec_vecindario[5][0] =  0;
+                                vec_vecindario[5][1] =  c;
+                        }
+                }else{
+                        vec_vecindario[4][0] =  f+1;
+                        vec_vecindario[4][1] =  c;
+                        vec_vecindario[5][0] =  f+2;
+                        vec_vecindario[5][1] =  c;
+                }
+                //Derecha
+                if(c+2 > maxC) {
+                        if(c+1 > maxC) {
+                                vec_vecindario[6][0] =  f;
+                                vec_vecindario[6][1] =  0;
+                                vec_vecindario[7][0] =  f;
+                                vec_vecindario[7][1] =  1;
+                        }else{
+                                vec_vecindario[6][0] =  f;
+                                vec_vecindario[6][1] =  c+1;
+                                vec_vecindario[7][0] =  f;
+                                vec_vecindario[7][1] =  0;
+                        }
+                }else{
+                        vec_vecindario[6][0] =  f;
+                        vec_vecindario[6][1] =  c+1;
+                        vec_vecindario[7][0] =  f;
+                        vec_vecindario[7][1] =  c+2;
+                }
+        }
+                vec_vecindario[8][0] = f;
+                vec_vecindario[8][1] = c;
+                break;
+        }
+}
